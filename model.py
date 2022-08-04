@@ -7,10 +7,10 @@ df = pd.read_csv("Zomato_df_cleaned.csv")
 X = df.drop(columns="rate",axis=1)
 y = df.rate
 
-
+###
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.35,random_state=42)
-
+###
 from sklearn.ensemble import ExtraTreesRegressor
 et_model = ExtraTreesRegressor(n_estimators=65)
 et_model.fit(X_train,y_train)
